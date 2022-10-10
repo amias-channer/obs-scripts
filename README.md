@@ -3,26 +3,17 @@ obs-scripts
 
 a collection of python scripts for obs automation 
 
-obs-command 
-----------
-Run up to 6 commands from Hotkey presses.
+* __obs-command__ - Run up to 6 commands from Hotkey presses.
+* __obs-cycle__ - Cycle through your scenes on a timer
+* __obs-hue__ -Send configurations to your hue lights by pressing hotkeys
 
+Each script is standalone or can be used together.
 
-obs-cycle 
----------
-Cycle through your scenes on a timer
-
-
-obs-hue
--------
-Send configurations to your hue lights by pressing hotkeys
-
+You can run them from anywhere on your system, obs doesn't import
+the script, it just remembers to run it.
 
 Setup
 =====
 
-* Download the file
-* Copy out of donwload folder
-* Install via the Tools -> Scripts menu in OBS
-* configure the options
-* configure the hotkeys in Settings -> Hotkeys
+* Install and Configure via the Tools -> Scripts menu in OBS
+* Configure the hotkeys in Settings -> Hotkeys
