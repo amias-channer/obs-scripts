@@ -22,6 +22,9 @@ THe spin the bottle game you played as a teenager, pick random person and perfor
 !command update spin_the_bottle ${user} spins the bottle, it points to ${random.chatter} who picks a card saying ${random.pick "Fuck" "Kiss" "Wash" "Nibble" "Feed" "Pamper"}
 ```
 
+to use it run:  !spin_the_bottle
+
+
 ## Documentation
 
 A list of command variables you can use with these scripts can be found here 
