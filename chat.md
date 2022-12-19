@@ -40,6 +40,17 @@ Perform a mysterious trickshot with a random object with a strange outcome
 !command del trickshot
 ```
 
+### Snake 
+
+Create a snake of a variable length
+```
+!command add snake `-_${repeat ${1} -_}-*~
+
+!snake 50
+
+!command del snake
+```
+
 ## Documentation
 
 A list of command variables you can use with these scripts can be found here 
