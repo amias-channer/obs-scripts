@@ -51,6 +51,17 @@ Create a snake of a variable length
 !command del snake
 ```
 
+### Dad Jokes from twitter
+
+Fetch the last tweet from a bot that tweets dad jokes
+```
+!command add dad_joke ${lasttweet.Dadsaysjokes}
+
+!dad_joke
+
+!command del dad_joke
+```
+
 ## Documentation
 
 A list of command variables you can use with these scripts can be found here 
