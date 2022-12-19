@@ -40,11 +40,11 @@ Perform a mysterious trickshot with a random object with a strange outcome
 !command del trickshot
 ```
 
-### Snake 
+### Talking Snake 
 
-Create a snake of a variable length
+Create a snake of a variable length that says a message
 ```
-!command add snake `-_${repeat ${1} -_}-*~
+!command add snake `-_${repeat ${1} -_}-*~ ${2:}
 
 !snake 50
 
