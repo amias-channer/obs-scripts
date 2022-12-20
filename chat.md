@@ -88,6 +88,7 @@ The script takes the following parameters
 * f = value to return if false , defaults to 0
 
 In this example i am using an instance of my if.pl script at http://amias.net/if.pl ( use your own instance please )
+You can download if.pl from here - https://github.com/amias-channer/obs-scripts/blob/master/if.pl
 
 I also use ${queryescape} to url encode the parameters a and b which are the first and second argulments in the chat
 ```
