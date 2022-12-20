@@ -62,18 +62,21 @@ StreamElements: -<}>----*~ -<}>----*~ -<}>----*~ -<}>----*~ -<}>----*~
 ```
 !command add fish }-~#${repeat ${1}#}#*>
 !fish 5
-
+StreamElements: }-~## # # # ##*>
 ```
 
 #### Fish in variable quantites
 ```
 !command add fishes ${repeat ${1} )~<###*> }
+!fishes 5
+StreamElements: )~<###*> )~<###*> )~<###*> )~<###*> )~<###*>
 ```
 
 #### Snakes of variable length
 ```
 !command add snake `-_${repeat ${1} -_ }-*~
-!snake
+!snake 5
+StreamElements: `-_-_ -_ -_ -_ -_-*~
 ```
 
 #### Random amount of snakes of variable type and quantity
@@ -81,9 +84,10 @@ this one is fun , it shows that the pick is done once at the beginning so each r
 ```
 !command edit snakesr ${repeat ${random.2-10} ${random.pick "`-_-_-_-_-_-*~" ",-_-_-*~" "~*-_-_-`" "~*-_-_-_-_-`" } }
 !snakesr
+StreamElements: ~*-_-_-_-_-` ~*-_-_-_-_-` ~*-_-_-_-_-`
+```
 
 #### Talking Snake 
-
 Create a snake of a variable length that says a message
 ```
 !command edit snakesay `-_${repeat ${1} -_ }-*~ " ${2:} "
