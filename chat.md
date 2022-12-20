@@ -46,19 +46,28 @@ i've been making custom animals for some of the chats
 
 #### Geese
 ```
-!command edit geese ${repeat ${1} ' -<}>----*~ ' }
+!command add geese ${repeat ${1} ' -<}>----*~ ' }
 !geese 5
+StreamElements: -<}>----*~ -<}>----*~ -<}>----*~ -<}>----*~ -<}>----*~
 ```
 
 #### Ducks
 ```
- !command edit ducks ${repeat ${1} ' -<}>-*~ ' }
+ !command add ducks ${repeat ${1} ' -<}>-*~ ' }
+ !ducks 5
+ StreamElements: -<}>-*~ -<}>-*~ -<}>-*~ -<}>-*~ -<}>-*~
 ```
 
 #### Fish of variable length
 ```
-!command add fish }-~#${repeat ${1} #}#*>
+!command add fish ${repeat ${2} }-~#${repeat ${1} #}#*> }
 !fish 5
+
+```
+
+#### Fish in variable quantites
+```
+!command add fishes ${repeat ${1} )~<###*> }
 ```
 
 #### Snakes of variable length
@@ -83,13 +92,14 @@ Fetch the last tweet from a bot that tweets dad jokes
 !command add dad_joke ${lasttweet.Dadsaysjokes}
 
 !dad_joke
-
+!command alias add dad_joke dadjoke dad-joke dadjoke
+ 
 !command del dad_joke
 ```
 
 ### Get and Set variables 
 
-Get an set vars , can be used to configure commands
+Get and set named variables , can be used to configure commands
 ```
 !command add get ${getcount ${1}}
 !command add command set ${count ${1} ${2:}}
