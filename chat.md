@@ -134,8 +134,8 @@ get your channel id by opening this link in the browser ( change kolanutwaffles 
 https://api.streamelements.com/kappa/v2/channels/kolanutwaffles  
 from the results of that you need the bit inside id=' ' it will be numbers and letters from a to f , hex.
 
-I also use ${queryescape} to url encode the parameters a and b which are the first and second argulments in the chat.
-However if you specify a parameter it must exist or the call will not be made. 
+I also use ${queryescape} to url encode the parameters, its an annoying complication but it keeps it sane.
+If you specify a parameter a corresponding argument must be provided or the call will not be made.
 A way round this is to to make if if3 if4 and if5 so each form can work for different need.
 
 #### examples ####
@@ -149,15 +149,15 @@ so this is a basic form of if
 !if this this
 StreamElements: this
 ```
-or the 3 argument form of if 
+or the 3 argument form of if , note that b and o are wired to 3 and 2 to enable that more natural a op b ordering 
 ```
-!command edit if3 ${customapi.amias.net/if.pl?a=${queryescape ${1}};b=${queryescape ${2}};o=${queryescape ${3}} }
-!if3 1 10 <
+!command edit if3 ${customapi.amias.net/if.pl?a=${queryescape ${1}};b=${queryescape ${3}};o=${queryescape ${2}} }
+!if3 1 < 10
 StreamElements: 1
 
-!if3 10 1 <
+!if3 10 < 1
 
-!if3 10 1 >
+!if3 10 > 1
 StreamElements: 10
 
 !if3 1 10 >
@@ -165,16 +165,16 @@ StreamElements: 10
 ```
 or the 4 and 5 argument forms for adding specific output for true and false 
 ```
-!command edit if4 ${customapi.amias.net/if.pl?a=${queryescape ${1}};b=${queryescape ${2}};o=${queryescape ${3}};t=${queryescape ${4}} }
-!command edit if5 ${customapi.amias.net/if.pl?a=${queryescape ${1}};b=${queryescape ${2}};o=${queryescape ${3}};t=${queryescape ${4}};f=${queryescape ${5}} }
+!command edit if4 ${customapi.amias.net/if.pl?a=${queryescape ${1}};b=${queryescape ${3}};o=${queryescape ${2}};t=${queryescape ${4}} }
+!command edit if5 ${customapi.amias.net/if.pl?a=${queryescape ${1}};b=${queryescape ${3}};o=${queryescape ${2}};t=${queryescape ${4}};f=${queryescape ${5}} }
 
-!if4 this that eq matches
+!if4 this eq that matches
 
-!if4 this this eq matches
-Streamlabs: matches
-!if5 this this eq match not
-Streamlabs: matches
-!if5 this that eq match not
+!if4 this eq this match
+Streamlabs: match
+!if5 this eq this match not
+Streamlabs: match
+!if5 this eq that match not
 Streamlabs: not
 ```
 ## Documentation
