@@ -80,6 +80,8 @@ Get an set vars , can be used to configure commands
 
 This is a bit of a hack and it requires calling an extrnal script with customapi but it will allow you to have a conditionals.
 
+#### script parameters ###
+
 The script takes the following parameters 
 * a = the first value to compare.
 * b = the second value to compare. 
@@ -87,21 +89,31 @@ The script takes the following parameters
 * t = value to return if true , defaults to first value
 * f = value to return if false , defaults to second value
 
-In this example i am using an instance of my if.pl script at http://amias.net/if.pl ( use your own instance please )
+some example calls of the script 
+* ?a=1;b=1              This will check is A is stringwise equal to B and return 1 if it is and 0 if it is not
+* ?a=1;b=1;t=yes;f=no   Same as above but the string yes is returned for a match and no if not     
+* ?a=1;b=10;o=<         This will check if a < b 
+* ?a=this;b=that;o=>    this will check the strings alphabetically
+
+#### script setup ####
+
+In this example i am using an instance of my if.pl script at http://amias.net/if.pl 
+Please dont use my instance, it will block you without permission. get your own server.
+
 You can download if.pl from here - https://github.com/amias-channer/obs-scripts/blob/master/if.pl
-You need to edit the script and add your channel id to the allowed list before running it. 
+You need to edit the script and add your channel id to the allowed list before running it.
+
+#### channel id setup ####
 
 get your channel id by opening this link in the browser ( change kolanutwaffles for your channel name)  
 https://api.streamelements.com/kappa/v2/channels/kolanutwaffles  
 from the results of that you need the bit inside id=' ' it will be numbers and letters from a to f , hex.
 
-some example calls of the script 
-?a=1;b=1              This will check is A is stringwise equal to B and return 1 if it is and 0 if it is not
-?a=1;b=1;t=yes;f=no   Same as above but the string yes is returned for a match and no if not     
-?a=1;b=10;o=<         This will check if a < b 
-?a=this;b=that;o=>    this will check the strings alphabetically
 I also use ${queryescape} to url encode the parameters a and b which are the first and second argulments in the chat.
-However if you specify a parameter it must exist or the call will not be made. A way round this is to to make if if3 if4 and if5 
+However if you specify a parameter it must exist or the call will not be made. 
+A way round this is to to make if if3 if4 and if5 so each form can work for different need.
+
+#### examples ####
 
 so this is a basic form of if  
 ```
