@@ -92,6 +92,7 @@ Create a snake of a variable length that says a message
 ```
 !command edit snakesay `-_${repeat ${1} -_ }-*~ " ${2:} "
 !snakesay 5 listen to the snake , what could go wrong
+StreamElements: `-_-_ -_ -_ -_-*~ " listen to the snake, what could go wrong "
 
 ```
 
