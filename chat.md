@@ -1,4 +1,4 @@
-# Amias' Streamlabs Chat commands
+# Amias' StreamElements Chat commands
 
 This page is a collection of chat commands for the streamelements chat bot. 
 
@@ -60,6 +60,20 @@ Fetch the last tweet from a bot that tweets dad jokes
 !dad_joke
 
 !command del dad_joke
+```
+
+### Get and Set variables 
+
+Get an set vars , can be used to configure commands
+```
+!command add get ${getcount ${1}}
+!command add command set ${count ${1} ${2:}}
+
+!set this that 
+!get this 
+
+!command del get
+!command add set
 ```
 
 ## Documentation
