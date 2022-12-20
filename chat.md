@@ -40,15 +40,40 @@ Perform a mysterious trickshot with a random object with a strange outcome
 !command del trickshot
 ```
 
-### Talking Snake 
+### Animals 
+
+i've been making custom animals for some of the chats
+
+#### Geese
+```
+!command edit geese ${repeat ${1} ' -<}>----*~ ' }
+!geese 5
+```
+
+#### Ducks
+```
+ !command edit ducks ${repeat ${1} ' -<}>-*~ ' }
+```
+
+#### Fish of variable length
+```
+!command add fish }-~#${repeat ${1} #}#*>
+!fish 5
+```
+
+#### Snakes of variable length
+```
+!command add snake `-_${repeat ${1} -_ }-*~
+!snake
+```
+
+#### Talking Snake 
 
 Create a snake of a variable length that says a message
 ```
-!command add snake `-_${repeat ${1} -_}-*~ ${2:}
+!command edit snakesay `-_${repeat ${1} -_ }-*~ " ${2:} "
+!snakesay 5 listen to the snake , what could go wrong
 
-!snake 50
-
-!command del snake
 ```
 
 ### Dad Jokes from twitter
