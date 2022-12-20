@@ -60,7 +60,7 @@ StreamElements: -<}>----*~ -<}>----*~ -<}>----*~ -<}>----*~ -<}>----*~
 
 #### Fish of variable length
 ```
-!command add fish ${repeat ${2} }-~#${repeat ${1} #}#*> }
+!command add fish }-~#${repeat ${1}#}#*>
 !fish 5
 
 ```
@@ -75,6 +75,12 @@ StreamElements: -<}>----*~ -<}>----*~ -<}>----*~ -<}>----*~ -<}>----*~
 !command add snake `-_${repeat ${1} -_ }-*~
 !snake
 ```
+
+#### Random amount of snakes of variable type and quantity
+this one is fun , it shows that the pick is done once at the beginning so each repetition is the same.
+```
+!command edit snakesr ${repeat ${random.2-10} ${random.pick "`-_-_-_-_-_-*~" ",-_-_-*~" "~*-_-_-`" "~*-_-_-_-_-`" } }
+!snakesr
 
 #### Talking Snake 
 
