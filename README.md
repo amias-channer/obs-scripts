@@ -12,6 +12,10 @@ Each script is standalone or can be used together.
 You can run them from anywhere on your system, obs doesn't import
 the script, it just remembers to run it.
 
+Chat
+====
+For streamelements chat commands see [chat.md](chat.md) 
+
 Setup
 =====
 
