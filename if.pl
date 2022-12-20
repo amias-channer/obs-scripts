@@ -1,5 +1,4 @@
 #!/usr/bin/perl
-#
 
 use CGI qw/ param header /;
 use POSIX qw(strftime);
@@ -17,15 +16,20 @@ my $op      = $q->param('o');
 my $true    = $q->param('t');
 my $false   = $q->param('f');
 
-# default returns to 1 or 0 
-if (!$true)  { $true = 1 };
-if (!$false) { $false = 0 };
+# default returns to parameters values 
+if (!$true)  { $true = $first };
+if (!$false) { $false = $second };
 
-my @allowed_channel_ids = qw / YOUR-CHANNEL-ID-GOES-HERE-OR-YOU-GET-NO-RESPONSE /;
+# ids for react_dj kolanutwaffles
+my @allowed_channel_ids = qw / YOUR_CHANNEL_ID_GOES_HERE /;
 
 
+# Security - we require the user agent of the StreamElements Bot
 if (exists $ENV{'HTTP_USER_AGENT'} && $ENV{'HTTP_USER_AGENT'} eq 'StreamElements Bot') {
+        # now we are checking the header containing the channel id has one of our allowed ids
         my $channel_id = $ENV{'HTTP_X_STREAMELEMENTS_CHANNEL'};
+
+        # no entry unless your ID is on the list
         my $auth = false;
         if  (grep($channel_id,@allowed_channel_ids)) { $auth = true };
         unless ($auth) { exit };
@@ -72,11 +76,38 @@ if ($op eq "or")  {
         } else {
                 print $false
         }
+} elsif ($op eq ">")  {
+        if ($first > $second) {
+                print $true
+        } else {
+                # if they dont match and we dont have a supplied output for false then print nothing
+                if ($false eq $second) {
+                        print ""
+                } else {
+                        print $false
+                }
+        }
+} elsif ($op eq "<")  {
+        if ($first <  $second) {
+                print $true
+        } else {
+                # if they dont match and we dont have a supplied output for false then print nothing
+                if ($false eq $second) {
+                        print ""
+                } else {
+                        print $false
+                }
+        }
 } else {
         if ($first eq  $second) {
                 print $true
         } else {
-                print $false
+                # if they dont match and we dont have a supplied output for false then print nothing
+                if ($false eq $second) {
+                        print ""
+                } else {
+                        print $false
+                }
         }
 }
-~               
+~                 
