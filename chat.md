@@ -78,7 +78,7 @@ Get an set vars , can be used to configure commands
 
 ### Operators ###
 
-This is a bit of a hack and it requires calling an extrnal script but it will allow you to have a conditionals.
+This is a bit of a hack and it requires calling an extrnal script with customapi but it will allow you to have a conditionals.
 
 The script takes the following parameters 
 * a = the first value to compare.
@@ -89,6 +89,15 @@ The script takes the following parameters
 
 In this example i am using an instance of my if.pl script at http://amias.net/if.pl ( use your own instance please )
 You can download if.pl from here - https://github.com/amias-channer/obs-scripts/blob/master/if.pl
+You need to edit the script and add your channel id to the allowed list before running it. 
+
+get your channel id by opening this link in the browser ( change kolanutwaffles for your channel name)  
+https://api.streamelements.com/kappa/v2/channels/kolanutwaffles  
+from the results of that you need the bit inside id=' ' it will be numbers and letters from a to f , hex.
+
+some example calls of the script 
+?a=1;b=1              This will check is A is stringwise equal to B and return 1 if it is and 0 if it is not
+?a=1;b=1;t=yes;f=no   Same as above but the string yes is returned for a match and no if not     
 
 I also use ${queryescape} to url encode the parameters a and b which are the first and second argulments in the chat
 ```
