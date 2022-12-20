@@ -76,6 +76,33 @@ Get an set vars , can be used to configure commands
 !command add set
 ```
 
+### Operators ###
+
+This is a bit of a hack and it requires calling an extrnal script but it will allow you to have a conditionals.
+
+The script takes the following parameters 
+* a = the first value to compare.
+* b = the second value to compare. 
+* o = the operator to use for comparison , default is eq = equal , ne = not equal , or = logical or , and = logical and
+* t = value to return if true , defaults to 1
+* f = value to return if false , defaults to 0
+
+In this example i am using an instance of my if.pl script at http://amias.net/if.pl ( use your own instance please )
+
+I also use ${queryescape} to url encode the parameters a and b which are the first and second argulments in the chat
+```
+!command add if ${customapi.amias.net/if.pl?a=${queryescape ${1}};b=${queryescape ${2}};o=eq;t=matches;f=doesnt}
+```
+so if i run this 
+```
+!if this that
+StreamElements: doesnt
+
+!if this this
+StreamElements: matches
+```
+using the t and f parameters you can control the output returned to the person running the command.
+
 ## Documentation
 
 A list of command variables you can use with these scripts can be found here 
