@@ -83,9 +83,9 @@ This is a bit of a hack and it requires calling an extrnal script with customapi
 The script takes the following parameters 
 * a = the first value to compare.
 * b = the second value to compare. 
-* o = the operator to use for comparison , default is eq = equal , ne = not equal , or = logical or , and = logical and
-* t = value to return if true , defaults to 1
-* f = value to return if false , defaults to 0
+* o = the operator to use for comparison , default is eq = equal , ne = not equal , or = logical or , and = logical and, < = less than , > = greater than
+* t = value to return if true , defaults to first value
+* f = value to return if false , defaults to second value
 
 In this example i am using an instance of my if.pl script at http://amias.net/if.pl ( use your own instance please )
 You can download if.pl from here - https://github.com/amias-channer/obs-scripts/blob/master/if.pl
@@ -98,21 +98,48 @@ from the results of that you need the bit inside id=' ' it will be numbers and l
 some example calls of the script 
 ?a=1;b=1              This will check is A is stringwise equal to B and return 1 if it is and 0 if it is not
 ?a=1;b=1;t=yes;f=no   Same as above but the string yes is returned for a match and no if not     
+?a=1;b=10;o=<         This will check if a < b 
+?a=this;b=that;o=>    this will check the strings alphabetically
+I also use ${queryescape} to url encode the parameters a and b which are the first and second argulments in the chat.
+However if you specify a parameter it must exist or the call will not be made. A way round this is to to make if if3 if4 and if5 
 
-I also use ${queryescape} to url encode the parameters a and b which are the first and second argulments in the chat
+so this is a basic form of if  
 ```
-!command add if ${customapi.amias.net/if.pl?a=${queryescape ${1}};b=${queryescape ${2}};o=eq;t=matches;f=doesnt}
-```
-so if i run this 
-```
-!if this that
-StreamElements: doesnt
+!command edit if ${customapi.amias.net/if.pl?a=${queryescape ${1}};b=${queryescape ${2}} }
+
+!if this that 
 
 !if this this
-StreamElements: matches
+StreamElements: this
 ```
-using the t and f parameters you can control the output returned to the person running the command.
+or the 3 argument form of if 
+```
+!command edit if3 ${customapi.amias.net/if.pl?a=${queryescape ${1}};b=${queryescape ${2}};o=${queryescape ${3}} }
+!if3 1 10 <
+StreamElements: 1
 
+!if3 10 1 <
+
+!if3 10 1 >
+StreamElements: 10
+
+!if3 1 10 >
+
+```
+or the 4 and 5 argument forms for adding specific output for true and false 
+```
+!command edit if4 ${customapi.amias.net/if.pl?a=${queryescape ${1}};b=${queryescape ${2}};o=${queryescape ${3}};t=${queryescape ${4}} }
+!command edit if5 ${customapi.amias.net/if.pl?a=${queryescape ${1}};b=${queryescape ${2}};o=${queryescape ${3}};t=${queryescape ${4}};f=${queryescape ${5}} }
+
+!if4 this that eq matches
+
+!if4 this this eq matches
+Streamlabs: matches
+!if5 this this eq match not
+Streamlabs: matches
+!if5 this that eq match not
+Streamlabs: not
+```
 ## Documentation
 
 A list of command variables you can use with these scripts can be found here 
