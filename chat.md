@@ -104,6 +104,26 @@ StreamElements: `-_-_ -_ -_ -_-*~ " listen to the snake, what could go wrong "
 
 ```
 
+## Twitter Feeds 
+
+Twitter feeds are good way to get changing data in the chat
+
+### Tiny Forests 
+
+The tiny forests twitter account posts a random unicode forest every hour
+'''
+!cmd add forest ${lasttweet.tiny_forests}@tiny_forests
+!forest
+StreamElements: (@tiny_forests): 🌼🌳 🌳🌲🌳🐿🌳 🐓 🐀 🌲🌳🌲🌳 🌲 🌳 🌳🌲 🐊🐊🌲 🌺 🌼🌺🌲🌲🌲 🌲 🌲 🌲🌹 🌲🌳☘🌲 🌲 🕸 🌳🍄 🌲 | 1 hour 11 mins ago
+```
+### Unicode Garbage
+
+The unicode garbage twitter account is an interesting source of noise
+```
+!cmd add seaweed ${lasttweet.unicode_garbage}
+!seaweed
+StreamElements: (@unicode_garbage): ﹊౼⤶౼°ǂ౼ǀ༽౼)౼౼፧৴౼﹚˚ǂ ౼֝ϹOϠõ﹙﹋)౼౼ϴ౼፟⃝اర～¡ ）ͽ౼﹚ଠ﹌ٮں፧◜﹎౼౼౼ͽɨ౼﹙౼ ﹏Ͻǁɫ੦﹌፨𐐄౼ɫºʗ౼۞⟯፡～°৩ ౼）ರ౼౼།ǂ৲o౼౼﹙﹎༼o｟︶౼ö ◜౼٭ا◜౼︶o౼፧Ͼ౼౼౼᎓።፠Ͼ｟ ɫ﹌◟৴౹﹎፟﹊(¡౼፨౼ʘ(（౼๏◝ | 1 hour 36 mins ago
+```
 ### Dad Jokes from twitter
 
 Fetch the last tweet from a bot that tweets dad jokes
