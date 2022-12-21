@@ -106,16 +106,18 @@ StreamElements: `-_-_ -_ -_ -_-*~ " listen to the snake, what could go wrong "
 
 ## Twitter Feeds 
 
-Twitter feeds are good way to get changing data in the chat
+Twitter feeds are good way to get changing data in the chat, lasttweet will give you the last tweet posted on that account.
+Needs to be quite a busy account to be worth it.
 
 ### Tiny Forests 
 
 The tiny forests twitter account posts a random unicode forest every hour
-'''
+```
 !cmd add forest ${lasttweet.tiny_forests}@tiny_forests
 !forest
 StreamElements: (@tiny_forests): 🌼🌳 🌳🌲🌳🐿🌳 🐓 🐀 🌲🌳🌲🌳 🌲 🌳 🌳🌲 🐊🐊🌲 🌺 🌼🌺🌲🌲🌲 🌲 🌲 🌲🌹 🌲🌳☘🌲 🌲 🕸 🌳🍄 🌲 | 1 hour 11 mins ago
 ```
+
 ### Unicode Garbage
 
 The unicode garbage twitter account is an interesting source of noise
