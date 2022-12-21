@@ -108,12 +108,29 @@ Fetch the last tweet from a bot that tweets dad jokes
 !command del dad_joke
 ```
 
+### Changing stream properties
+
+These are a bit dangerous and should probably only be used with active mods to switch it back
+
+Allow anyone to change the stream title 
+```
+!cmd add set-stream-title ${settitle ${1}}
+!set-stream-title a very silly title with spaces in it
+StreamElements: a very silly title with spaces in it
+```
+
+Allow anyone to change the stream game , this will be matched against twitches catagories.
+```
+!cmd add set-stream-game ${setgame ${1} }
+!set-stream-game Snooker
+StreamElements: Snooker
+
 ### Get and Set variables 
 
-Get and set named variables , can be used to configure commands
+Get and set named numeric variables , can be used to configure commands
 ```
 !command add get ${getcount ${1}}
-!command add command set ${count ${1} ${2:}}
+!command add set ${count ${1} ${2}}
 
 !set this that 
 !get this 
