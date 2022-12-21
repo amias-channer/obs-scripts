@@ -124,7 +124,7 @@ Allow anyone to change the stream game , this will be matched against twitches c
 !cmd add set-stream-game ${setgame ${1} }
 !set-stream-game Snooker
 StreamElements: Snooker
-
+```
 ### Get and Set variables 
 
 Get and set named numeric variables , can be used to configure commands
