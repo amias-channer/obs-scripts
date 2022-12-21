@@ -7,6 +7,14 @@ This page is a collection of chat commands for the streamelements chat bot.
 
 To use them just copy and paste them into a streamelements chat where you have admin.
 
+### Crackers 
+pull a cracker with someone and generate a random winner and prize
+```
+!cmd edit cracker ${sender} pulls a cracker with ${1} , > BANG!! <, ${random.pick ${sender} ${1} } wins ${random.pick "a shitfish" "some nailclippers" "a dice" "some coal" "small cards" "a crap magic trick" "the precious"}
+!cracker AUser
+StreamElements: AmiasC pulls a cracker with AUser , > BANG!! <, AUser wins the precious
+```
+
 ### Shitfish
 
 This is like thin plastic crappy little fortune telling fish you got in a cracker
