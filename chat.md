@@ -138,6 +138,20 @@ Fetch the last tweet from a bot that tweets dad jokes
 !command del dad_joke
 ```
 
+### Reportin stream properties 
+This one gives a quick overview of how the stream is doing 
+```
+!cmd edit stats This channel currently has ${channel.subs} subscribers, ${channel.followers} followers. ${channel.viewers} live viewers and has been seen ${channel.views} times
+!stats
+```
+
+This one prints your details to the channel
+```
+ !cmd edit userstats ${user} $ ${user.points} ${pointsname} ${user.points_rank}) @ ${user.time_online} ${user.time_online_rank}
+ !userstats
+```
+
+
 ### Changing stream properties
 
 These are a bit dangerous and should probably only be used with active mods to switch it back
