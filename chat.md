@@ -138,7 +138,7 @@ Fetch the last tweet from a bot that tweets dad jokes
 !command del dad_joke
 ```
 
-### Reportin stream properties 
+### Reporting stream properties 
 This one gives a quick overview of how the stream is doing 
 ```
 !cmd edit stats This channel currently has ${channel.subs} subscribers, ${channel.followers} followers. ${channel.viewers} live viewers and has been seen ${channel.views} times
