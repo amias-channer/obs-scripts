@@ -113,7 +113,7 @@ Needs to be quite a busy account to be worth it.
 
 The tiny forests twitter account posts a random unicode forest every hour
 ```
-!cmd add forest ${lasttweet.tiny_forests}@tiny_forests
+!cmd add forest ${lasttweet.tiny_forests}
 !forest
 StreamElements: (@tiny_forests): 🌼🌳 🌳🌲🌳🐿🌳 🐓 🐀 🌲🌳🌲🌳 🌲 🌳 🌳🌲 🐊🐊🌲 🌺 🌼🌺🌲🌲🌲 🌲 🌲 🌲🌹 🌲🌳☘🌲 🌲 🕸 🌳🍄 🌲 | 1 hour 11 mins ago
 ```
