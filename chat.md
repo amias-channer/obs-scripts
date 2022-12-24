@@ -95,6 +95,14 @@ this one is fun , it shows that the pick is done once at the beginning so each r
 StreamElements: ~*-_-_-_-_-` ~*-_-_-_-_-` ~*-_-_-_-_-`
 ```
 
+#### Random amount of fish of variable type and length
+this has the same limitation as the previous , only one random.pick per invocation 
+```
+!cmd add fishr ${repeat ${random.2-10} ${random.pick ">-<###*>" "<*###>=<" ">-<3#*>" "<*3333>~{" } }
+!fishr
+StreamElements: >-<###*> >-<###*> >-<###*> >-<###*> >-<###*> >-<###*> >-<###*>
+```
+
 #### Talking Snake 
 Create a snake of a variable length that says a message
 ```
