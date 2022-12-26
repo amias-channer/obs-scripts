@@ -226,7 +226,12 @@ from the results of that you need the bit inside id=' ' it will be numbers and l
 
 I also use ${queryescape} to url encode the parameters, its an annoying complication but it keeps it sane.
 If you specify a parameter a corresponding argument must be provided or the call will not be made.
-A way round this is to to make if if3 if4 and if5 so each form can work for different need.
+A way round this is to to make if if3 if4 and if5 so each form can work for different needs.
+
+#### types 
+
+the operators are provided by Perl which is very leniant about comparison of different types but ultimately you can expect string comparison.
+dates might not compare sensibly, be sure to test and verify.
 
 #### examples ####
 
