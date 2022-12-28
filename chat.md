@@ -231,7 +231,7 @@ A way round this is to to make if if3 if4 and if5 so each form can work for diff
 #### types 
 
 the operators are provided by Perl which is very leniant about comparison of different types but ultimately you can expect string comparison.
-dates might not compare sensibly, be sure to test and verify.
+dates might not compare sensibly, be sure to test and verify. http://web.mit.edu/perl5/www/man/perlop.html has the final word.
 
 #### examples ####
 
