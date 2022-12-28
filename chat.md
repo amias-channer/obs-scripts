@@ -166,14 +166,14 @@ These are a bit dangerous and should probably only be used with active mods to s
 
 Allow anyone to change the stream title 
 ```
-!cmd add set-stream-title ${settitle ${1}}
+!cmd add set-stream-title ${settitle ${1:}}
 !set-stream-title a very silly title with spaces in it
 StreamElements: a very silly title with spaces in it
 ```
 
 Allow anyone to change the stream game , this will be matched against twitches catagories.
 ```
-!cmd add set-stream-game ${setgame ${1} }
+!cmd add set-stream-game ${setgame ${1:} }
 !set-stream-game Snooker
 StreamElements: Snooker
 ```
@@ -190,6 +190,23 @@ Get and set named numeric variables , can be used to configure commands
 !command del get
 !command add set
 ```
+
+### Parameters
+
+You can copy user parameters into your commands by referring to them as $1 $2 $3.
+They are speerated by spaces 
+e.g. 
+```
+!mycommand one two three
+!mycommand this is a sentance
+```
+will give you in $1 one , in $2 two, it $3 three 
+
+You can concatenate them $1:$2  
+You can refer to a range $1:$3 
+if you refer to a parameter that isn't specified the command doesn't run
+it would near if you could specify multiple versions with different parameter combinations but you cant 
+You can leave the other half empty to get everything from then on e.g $1: will allways be everything in one variable.
 
 ### Operators ###
 
