@@ -191,6 +191,17 @@ Get and set named numeric variables , can be used to configure commands
 !command add set
 ```
 
+A community BPM counter, shows how multiple commands and users can access the same bpm value 
+```
+ !cmd add bpm Currently at ${getcount bpm} BPM
+ !cmd add faster ${count bpm +1} BPM
+ !cmd add slower ${count bpm -1} BPM
+ !cmd add muchfaster ${count bpm +10} BPM
+ !cmd add muchslower ${count bpm -10} BPM
+ !cmd add wayfaster ${count bpm +50} BPM
+ !cmd add wayslower ${count bpm -50} BPM
+```
+
 ### Parameters
 
 You can copy user parameters into your commands by referring to them as $1 $2 $3.
