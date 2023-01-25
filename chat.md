@@ -223,7 +223,7 @@ You can leave the other half empty to get everything from then on e.g $1: will a
 
 This command makes a fun use of parameter mangling and loops with a bit of randomness to make a dub version of the phrase you give it.
 ```
-!cmd edit dub , ${1:}..${repeat ${random.1-2} ${2:}}..${repeat ${random.1-3} ${3:}}..${repeat ${random.1-4} ${4:}}..
+!cmd edit dub , ${1:} ${repeat ${random.1-2} ${2:}} ${repeat ${random.1-3} ${3:}} ${repeat ${random.1-4} ${4:}}
 !dub nuff dubs a gwarn
 StreamElements: , nuff dubs a gwarn..dubs a gwarn..a gwarn a gwarn..gwarn..
 ```
