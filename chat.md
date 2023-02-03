@@ -228,6 +228,14 @@ This command makes a fun use of parameter mangling and loops with a bit of rando
 StreamElements: , nuff dubs a gwarn..dubs a gwarn..a gwarn a gwarn..gwarn..
 ```
 
+#### Decider
+This command will answer questions for you 
+```
+!cmd edit decider ${3:} ? ${random.pick ${1} ${2}}
+!decider Yes No Meat is Murder 
+Streamelements: Meat is Muder ? Yes 
+```
+
 ### Operators ###
 
 This is a bit of a hack and it requires calling an extrnal script with customapi but it will allow you to have a conditionals.
