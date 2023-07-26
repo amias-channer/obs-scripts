@@ -111,11 +111,50 @@ Create a snake of a variable length that says a message
 StreamElements: `-_-_ -_ -_ -_-*~ " listen to the snake, what could go wrong "
 
 ```
+## Emojis
+
+Emojis are an easy way to get graphics into your commands, they vary depending on the system displaying them.
+
+### Emoju Banners 
+
+You can use repeat to make emoji banners , these get picked up by the stream elements layer if that is available, this can make a nice kappagen effect.
+
+#### Love hearts
+```
+!cmd add hearts ${repeat ${1} ❤️}
+!hearts 50
+StreamElements: ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️
+```
+
+#### Poop
+```
+!cmd add poops ${repeat ${1} 💩}
+!poops 💩
+StreamElements: 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩
+
+```
+
+#### Rainbows 
+```
+!cmd add rainbows ${repeat ${1} ❤️🧡💛💚💙💜}
+!rainbows 10
+StreamElements: ❤️🧡💛💚💙💜 ❤️🧡💛💚💙💜 ❤️🧡💛💚💙💜 ❤️🧡💛💚💙💜 ❤️🧡💛💚💙💜 ❤️🧡💛💚💙💜 ❤️🧡💛💚💙💜 ❤️🧡💛💚💙💜 ❤️🧡💛💚💙💜 ❤️🧡💛💚💙💜
+```
+
+### Emoji Commands
+You can also make commands that have names that include emojis or are just emojis
+```
+!cmd add ❤️ ${repeat ${1} ❤️}
+!❤️ 50
+StreamElements: ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️
+```
 
 ## Twitter Feeds 
 
 Twitter feeds are good way to get changing data in the chat, lasttweet will give you the last tweet posted on that account.
-Needs to be quite a busy account to be worth it.
+Needs to be quite a busy account to be worth it. 
+
+UPDATE: the ongoing enshitification of twitter means these feeds are not working and probably not coming back :-(
 
 ### Tiny Forests 
 
