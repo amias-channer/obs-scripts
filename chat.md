@@ -306,6 +306,47 @@ Try to use as few words as possible and capitalise any names or nouns to ensure 
 Streamelements: Mum: Hello my lovely little cupcakes Sending each and every one of you a big virtual hug and a sprinkle of glitter to brighten your day 💖✨
 ```
 
+### customapi ###
+This is command that lets you pull in external data from webpages. Its very usefull for creating libraries of data for your commands.
+
+This command would fetch weather data from a made up weather API at http://weather.com/forecast and supply it with an encoded HTTP Get param called location
+```
+!cmd add weather ${customapi.weather.com/forecast?location=${queryescape ${1:}}}
+StreamElements: Amsterdam, Netherlands: 🌞 8.0 °C (46.4 °F). Feels like 4.3 °C (39.8 °F). Light rain. Wind is blowing from the West at 31.0 km/h (19.2 mp/h). 71% humidity. Visibility: 10 km (6 miles). Air pressure: 1007 hPa.
+```
+These customapi tags get parsed very early on so you can use them to do all sorts of injections of data.
+
+#### Random picks from api ####
+You can put an api in to random.pick to have it split the result on commas and pick one part at random
+This is ok for small lists but it has limited capacity and will silently truncate a long list.
+```
+!cmd add sandwich ${sender} orders a ${random.pick ${customapi.website.com/fillings}} and ${random.pick ${customapi.website.com/sauces} sandwich on ${random.pick ${customapi.website.com/breads}}
+Streamelements: amias orders Roasted Vegetable and Hummus sandwich on Cibatta
+```
+
+You can also add local options to the same pick that contains api results 
+```
+!cmd add override ${random.pick one,two,${customapi.website.com/other_options}}
+```
+
+#### Math.js scripts ####
+You can use customapi to pull in files and run them as math.js scripts and have fun testing the limits of the node.js sandbox it will be run in.
+```
+!cmd add mathrun ${maths ${customapi.website.com/script.js}}
+```
+
+#### Prompt injection libraries ####
+You can use customapi to pull in text for use in prompting the ai command 
+```
+!cmd add mum Mum: ${ai ${customapi.website.com/prompt_wholesome_mum} ${1:} }
+```
+
+#### Using customapi as an injection library ####
+I wrote some code that runs a website which automates the process of defining customapi insert data.
+Its at http://api.amias.net/ and the code is at https://github.com/amias-channer/customapi-manager
+
+
+
 ### Operators ###
 
 This is a bit of a hack and it requires calling an extrnal script with customapi but it will allow you to have a conditionals.
