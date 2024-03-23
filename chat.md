@@ -275,6 +275,37 @@ This command will answer questions for you
 Streamelements: Meat is Muder ? Yes 
 ```
 
+### AI ###
+
+This is WILD , there is now an ${ai  } command , it sends the contents to an llm and replaces the tag with results.
+The LLM has a system prompt that sets up its role and applies basic content filtering. 
+
+#### Static Queries ####
+
+You can create commands to do a specific query  
+```
+!cmd add fishjoke ${ai tell a joke about fish}
+Streamelements: I would but this is not the plaice
+```
+
+#### Parameterised Queries ####
+You can insert parameters in to the ai tag to make a general query system
+```
+!cmd add userhelp Userhelp: ${ai ${1:}} 
+!userhelp how do i subscribe
+Streamelements: Userhelp: you can click the subscribe button to subscribe
+```
+
+#### Personalities ####
+You can create commands that respond with different personalities by creating a parameterized query with an extra prompt
+Make sure to include the name of the voice you are creating in the streamelements output so you know who is saying what.
+Try to use as few words as possible and capitalise any names or nouns to ensure they get recognised.
+```
+!cmd add mum Mum: ${ai be a commically wholesome mum when you respond to this: ${1:}}
+!mum say hello to everyone 
+Streamelements: Mum: Hello my lovely little cupcakes Sending each and every one of you a big virtual hug and a sprinkle of glitter to brighten your day 💖✨
+```
+
 ### Operators ###
 
 This is a bit of a hack and it requires calling an extrnal script with customapi but it will allow you to have a conditionals.
