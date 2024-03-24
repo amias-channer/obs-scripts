@@ -214,7 +214,7 @@ A community BPM counter, shows how multiple commands and users can access the sa
  !cmd add wayslower ${count bpm -50} BPM
 ```
 the count tokens seem to get replaced before the $user tokens, so you can not do things like 
-${count ${user.name}counter } which would have been a per user (but not private) counter.
+ ' ${count ${user.name}counter } ' or '${getcount ${user.name}counter }'  which would have been a per user (but not private) counter.
 
 ### Parameters
 
