@@ -154,36 +154,8 @@ StreamElements: ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ �
 Twitter feeds are good way to get changing data in the chat, lasttweet will give you the last tweet posted on that account.
 Needs to be quite a busy account to be worth it. 
 
-UPDATE: the ongoing enshitification of twitter means these feeds are not working and probably not coming back :-(
+UPDATE: the ongoing enshitification of twitter means feeds are not working and probably not coming back :-(
 
-### Tiny Forests 
-
-The tiny forests twitter account posts a random unicode forest every hour
-```
-!cmd add forest ${lasttweet.tiny_forests}
-!forest
-StreamElements: (@tiny_forests): 🌼🌳 🌳🌲🌳🐿🌳 🐓 🐀 🌲🌳🌲🌳 🌲 🌳 🌳🌲 🐊🐊🌲 🌺 🌼🌺🌲🌲🌲 🌲 🌲 🌲🌹 🌲🌳☘🌲 🌲 🕸 🌳🍄 🌲 | 1 hour 11 mins ago
-```
-
-### Unicode Garbage
-
-The unicode garbage twitter account is an interesting source of noise
-```
-!cmd add seaweed ${lasttweet.unicode_garbage}
-!seaweed
-StreamElements: (@unicode_garbage): ﹊౼⤶౼°ǂ౼ǀ༽౼)౼౼፧৴౼﹚˚ǂ ౼֝ϹOϠõ﹙﹋)౼౼ϴ౼፟⃝اర～¡ ）ͽ౼﹚ଠ﹌ٮں፧◜﹎౼౼౼ͽɨ౼﹙౼ ﹏Ͻǁɫ੦﹌፨𐐄౼ɫºʗ౼۞⟯፡～°৩ ౼）ರ౼౼།ǂ৲o౼౼﹙﹎༼o｟︶౼ö ◜౼٭ا◜౼︶o౼፧Ͼ౼౼౼᎓።፠Ͼ｟ ɫ﹌◟৴౹﹎፟﹊(¡౼፨౼ʘ(（౼๏◝ | 1 hour 36 mins ago
-```
-### Dad Jokes from twitter
-
-Fetch the last tweet from a bot that tweets dad jokes
-```
-!command add dad_joke ${lasttweet.Dadsaysjokes}
-
-!dad_joke
-!command alias add dad_joke dadjoke dad-joke dadjoke
- 
-!command del dad_joke
-```
 
 ### Reporting stream properties 
 This one gives a quick overview of how the stream is doing 
@@ -201,7 +173,8 @@ This one prints your details to the channel
 
 ### Changing stream properties
 
-These are a bit dangerous and should probably only be used with active mods to switch it back
+These are a bit dangerous and should probably only be used with active mods to switch it back.
+Changing these can make the VOD recording split. 
 
 Allow anyone to change the stream title 
 ```
@@ -240,6 +213,8 @@ A community BPM counter, shows how multiple commands and users can access the sa
  !cmd add wayfaster ${count bpm +50} BPM
  !cmd add wayslower ${count bpm -50} BPM
 ```
+the count tokens seem to get replaced before the $user tokens, so you can not do things like 
+${count ${user.name}counter } which would have been a per user (but not private) counter.
 
 ### Parameters
 
@@ -280,11 +255,15 @@ Streamelements: Meat is Muder ? Yes
 This is WILD , there is now an ${ai  } command , it sends the contents to an llm and replaces the tag with results.
 The LLM has a system prompt that sets up its role and applies basic content filtering. 
 
+heres a basic guide to prompting LLMs
+https://www.uctoday.com/unified-communications/how-to-talk-to-an-llm-llm-prompt-engineering-for-beginners/https://www.uctoday.com/unified-communications/how-to-talk-to-an-llm-llm-prompt-engineering-for-beginners/
+
 #### Static Queries ####
 
 You can create commands to do a specific query  
 ```
 !cmd add fishjoke ${ai tell a joke about fish}
+!fishjoke
 Streamelements: I would but this is not the plaice
 ```
 
@@ -301,7 +280,7 @@ You can create commands that respond with different personalities by creating a 
 Make sure to include the name of the voice you are creating in the streamelements output so you know who is saying what.
 Try to use as few words as possible and capitalise any names or nouns to ensure they get recognised.
 ```
-!cmd add mum Mum: ${ai be a commically wholesome mum when you respond to this: ${1:}}
+!cmd add mum Mum: ${ai be a comically wholesome mum when you respond to this: ${1:}}
 !mum say hello to everyone 
 Streamelements: Mum: Hello my lovely little cupcakes Sending each and every one of you a big virtual hug and a sprinkle of glitter to brighten your day 💖✨
 ```
